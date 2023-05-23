@@ -3,9 +3,9 @@ class Prototype < ApplicationRecord
   has_many :comments
   has_one_attached :image
 
-  #private
+  validates :title, presence: true
+  validates :catch_copy, presence: true
+  validates :concept, presence: true
+  validates :image, presence: true
 
-  #def prototypes_params
-  #  params.require(:prototype).permit(:content, :image).merge(user_id: current_user.id)
-  #end
 end
