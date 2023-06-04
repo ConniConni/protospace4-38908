@@ -18,6 +18,8 @@ class PrototypesController < ApplicationController
 
   def show
     @prototype = Prototype.find(params[:id])
+    @comment = Commnet.new
+    @comments = @prototype.commnets
   end
 
   def edit
