@@ -21,8 +21,8 @@ class PrototypesController < ApplicationController
 
   def show
     @prototype = Prototype.find(params[:id])
-    @comment = Commnet.new
-    @comments = @prototype.commnets
+    @comment = Comment.new
+    @comments = @prototype.comments
   end
 
   def edit
@@ -50,6 +50,7 @@ private
  end
 
  def move_to_index
-    redirect_to root_path unless current_user == @prototype.user
+   @prototype = Prototype.find(params[:id])
+   redirect_to root_path unless current_user == @prototype.user
  end
 end
